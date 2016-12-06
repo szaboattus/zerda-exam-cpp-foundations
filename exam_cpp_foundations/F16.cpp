@@ -10,4 +10,5 @@
 F16::F16() {
   this->max_ammo = 8;
   this->base_damage = 30;
+  this->type = "F16 Fighting Falcon";
 }

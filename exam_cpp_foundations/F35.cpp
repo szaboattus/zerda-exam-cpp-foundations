@@ -10,5 +10,6 @@
 F35::F35() {
   this->max_ammo = 12;
   this->base_damage = 50;
+  this->type = "F35 Lightning II";
 }
 

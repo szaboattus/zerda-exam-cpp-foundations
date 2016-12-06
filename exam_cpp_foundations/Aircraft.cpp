@@ -15,26 +15,23 @@ Aircraft::Aircraft() {
 }
 
 unsigned int Aircraft::fight() {
-  all_damage = max_ammo * base_damage;
   ammo_level = 0;
   return max_ammo * base_damage;
-}
-
-int Aircraft::refill() {
-  int used_ammo = max_ammo - ammo_level;
-  ammo_level = max_ammo;
-  return used_ammo;
 }
 
 std::string Aircraft::get_type() {
   return type;
 }
 
+unsigned int Aircraft::get_all_damage() {
+  return ammo_level * base_damage;
+}
+
 std::string Aircraft::get_status() {
   std::string status;
-  status = "Type " + type;
-  status = ", Ammo: " + make_string(ammo_level);
-  status = ", Ammo: " + make_string(base_damage);
-  status += "" + make_string(all_damage);
+  status = "Type: " + type;
+  status += ", Ammo: " + make_string(ammo_level);
+  status += ", Ammo: " + make_string(base_damage);
+  status += ", All damage: " + make_string(get_all_damage());
   return status;
 }
